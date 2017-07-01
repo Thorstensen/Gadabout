@@ -15,19 +15,14 @@ namespace Gadabout.Server.Host
     {
         private static IContainer Container { get; set; }
         
-
         public void Start()
         {
-            var builder = new ContainerBuilder();
+            var mefContainer = new CatalogConfigurator()
+                                .AddAssembly(Assembly.GetExecutingAssembly())
+                                .AddDirectory("Modules")
+                                .BuildContainer();
 
-            var modulesCatalog = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"/Modules";
-            if (!Directory.Exists(modulesCatalog))
-                Directory.CreateDirectory(modulesCatalog);
-
-            var mefCatalog = new DirectoryCatalog(modulesCatalog, "*Module.dll");
-            builder.RegisterComposablePartCatalog(mefCatalog);
-
-            Container = builder.Build();
+            Container = Bootstrap.Initialize(mefContainer);
         }
 
         public void Stop()
