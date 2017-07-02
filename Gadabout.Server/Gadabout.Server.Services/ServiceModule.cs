@@ -21,7 +21,7 @@ namespace Gadabout.Server.Services
 
         protected override void Load(ContainerBuilder builder)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }
