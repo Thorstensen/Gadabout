@@ -20,6 +20,11 @@ namespace Gadabout.Server.Host
                     gadabout.WhenStopped(cfg => cfg.Stop());
                 });
 
+                configure.OnException(exception =>
+                {
+                    
+                });
+
                 configure.SetDescription("Gadabout Server responsible for hosting Web Services and database transactions");
                 configure.SetDisplayName("Gadabout Server");
                 configure.SetServiceName("Gadabout Server");

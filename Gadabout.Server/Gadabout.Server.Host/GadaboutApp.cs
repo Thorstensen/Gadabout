@@ -14,7 +14,7 @@ namespace Gadabout.Server.Host
     public class GadaboutApp
     {
         private static IContainer Container { get; set; }
-        
+     
         public void Start()
         {
             var mefContainer = new CatalogConfigurator()
