@@ -8,21 +8,28 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.Composition.Primitives;
+using Gadabout.Server.Infrastructure;
+using Gadabout.Server.Contracts;
 
 namespace Gadabout.Server.Host
 {
     public class GadaboutApp
     {
         private static IContainer Container { get; set; }
-     
+
         public void Start()
         {
-            var mefContainer = new CatalogConfigurator()
-                                .AddAssembly(Assembly.GetExecutingAssembly())
-                                .AddDirectory("Modules")
-                                .BuildContainer();
+            var bootstrapper = new Bootstrap();
+            Container = bootstrapper.Initialize();
+        }
 
-            Container = Bootstrap.Initialize(mefContainer);
+        private static ComposablePartCatalog GetComposableCatalog()
+        {
+            var modulesPath = Assembly.GetExecutingAssembly().GetModulesLocation();
+            var catalog = new DirectoryCatalog(modulesPath);
+
+            return catalog;
         }
 
         public void Stop()

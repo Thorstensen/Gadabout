@@ -82,11 +82,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceModule.cs" />
+    <Compile Include="OwinModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gadabout.Server\Gadabout.Server.csproj">
+      <Project>{CB421FDB-51F6-4AA6-996C-685AD08A71C3}</Project>
+      <Name>Gadabout.Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

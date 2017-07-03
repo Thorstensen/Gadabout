@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gadabout.Server.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace Gadabout.Server.Host
 
                 configure.OnException(exception =>
                 {
-                    
+                            
                 });
 
                 configure.SetDescription("Gadabout Server responsible for hosting Web Services and database transactions");
