@@ -2,6 +2,7 @@
 using Autofac.Integration.Mef;
 using Gadabout.Server.Contracts;
 using Gadabout.Server.Infrastructure;
+using Gadabout.Server.Infrastructure.Logging;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;

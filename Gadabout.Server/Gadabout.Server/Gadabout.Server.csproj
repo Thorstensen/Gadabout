@@ -50,14 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IApiController.cs" />
     <Compile Include="Contracts\IServerModule.cs" />
+    <Compile Include="Data\Attraction.cs" />
+    <Compile Include="Data\Destination.cs" />
+    <Compile Include="Data\RootEntity.cs" />
+    <Compile Include="Data\Trip.cs" />
+    <Compile Include="Data\User.cs" />
     <Compile Include="Infrastructure\AssemblyExtensions.cs" />
-    <Compile Include="Infrastructure\ConsoleLogger.cs" />
+    <Compile Include="Infrastructure\Logging\ConsoleLogger.cs" />
     <Compile Include="Infrastructure\Modules\GenericServiceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Framework\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
