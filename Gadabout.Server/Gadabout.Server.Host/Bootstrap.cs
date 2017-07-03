@@ -1,17 +1,11 @@
 ﻿using Autofac;
-using Autofac.Core;
 using Autofac.Integration.Mef;
 using Gadabout.Server.Contracts;
 using Gadabout.Server.Infrastructure;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gadabout.Server.Host
 {
@@ -21,6 +15,7 @@ namespace Gadabout.Server.Host
         {
             var containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterComposablePartCatalog(GetComposableCatalog());
+
             var container = containerBuilder.Build();
             var modules = container.Resolve<IEnumerable<IServerModule>>();
 
