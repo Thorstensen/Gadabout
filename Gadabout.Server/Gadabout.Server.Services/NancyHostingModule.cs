@@ -24,13 +24,12 @@ namespace Gadabout.Server.Services.NancyHosting
 
         public override void RegisterTypes(ContainerBuilder builder)
         {
-            builder.RegisterType<NancyBootstrapper>().As<INancyBootstrapper>();
+           
         }
 
         public override void StartModule()
         {
-            var nancyBootStrapper = Container.Resolve<INancyBootstrapper>();
-            var nancyHost = new NancySelfHost(nancyBootStrapper);
+            var nancyHost = new NancySelfHost();
             nancyHost.Start();
         }
 
