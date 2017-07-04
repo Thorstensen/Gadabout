@@ -95,9 +95,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gadabout.Server\Gadabout.Server.csproj">
+    <ProjectReference Include="..\Gadabout.Server\Gadabout.Server.Core.csproj">
       <Project>{CB421FDB-51F6-4AA6-996C-685AD08A71C3}</Project>
-      <Name>Gadabout.Server</Name>
+      <Name>Gadabout.Server.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
