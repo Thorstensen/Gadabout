@@ -10,22 +10,23 @@ using System.ComponentModel.Composition;
 using Autofac.Core;
 using Gadabout.Server.Contracts;
 using Gadabout.Server.Infrastructure.Modules;
+using Gadabout.Server.Services.Module;
 
 namespace Gadabout.Server.Services
 {
     [Export(typeof(IServerModule))]
-    public class OwinModule : GenericServiceModule
+    public class NancyHostingModule : GenericServiceModule
     {
-        public OwinModule()
+        public NancyHostingModule()
         {
 
         }
 
-        public override string ModuleName => "Owin Module. Responsible for hosting api's";
+        public override string ModuleName => "Nancy Hosting Module.";
 
         public override void RegisterTypes(ContainerBuilder builder)
         {
-           
+            builder.RegisterType<NancyHost>().As<INancyHost>();
         }
 
         public override void StartModule()

@@ -6,28 +6,36 @@ using Gadabout.Server.Infrastructure.Logging;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
+using System.Linq;
 using System.Reflection;
+using System;
 
 namespace Gadabout.Server.Host
 {
     public sealed class Bootstrap
     {
+        private IEnumerable<IServerModule> _modules = null;
+        private IContainer _container = null;
+        private ContainerBuilder _containerBuilder = new ContainerBuilder();
+
         public IContainer Initialize()
         {
             var containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterComposablePartCatalog(GetComposableCatalog());
 
-            var container = containerBuilder.Build();
-            var modules = container.Resolve<IEnumerable<IServerModule>>();
-
-            foreach (var module in modules)
+            using (var container = containerBuilder.Build())
             {
-                ConsoleLogger.Log($"Loading module {module.ModuleName}", System.Drawing.Color.Green);
-                module.RegisterTypes(containerBuilder);
-                module.StartModule();
+                var modules = container.Resolve<IEnumerable<IServerModule>>().ToList();
+
+                modules.ForEach(module =>
+                {
+                    ConsoleLogger.Log($"Loading module {module.ModuleName}", System.Drawing.Color.Green);
+                    module.RegisterTypes(_containerBuilder);
+                    module.StartModule();
+                });
             }
 
-            return container;
+            return _containerBuilder.Build();
         }
 
         private static ComposablePartCatalog GetComposableCatalog()
