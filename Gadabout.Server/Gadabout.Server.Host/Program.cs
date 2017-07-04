@@ -1,4 +1,4 @@
-﻿using Gadabout.Server.Infrastructure;
+﻿using Gadabout.Server.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;

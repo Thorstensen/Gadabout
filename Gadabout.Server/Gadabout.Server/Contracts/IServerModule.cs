@@ -1,13 +1,13 @@
 ﻿using Autofac;
 using Autofac.Core;
-using Gadabout.Server.Framework;
+using Gadabout.Server.Core.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gadabout.Server.Contracts
+namespace Gadabout.Server.Core.Contracts
 {
     public interface IServerModule : IModule
     {

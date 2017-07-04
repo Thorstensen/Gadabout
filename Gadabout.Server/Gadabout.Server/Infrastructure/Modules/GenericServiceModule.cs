@@ -1,4 +1,4 @@
-﻿using Gadabout.Server.Contracts;
+﻿using Gadabout.Server.Core.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac.Core;
 using Autofac;
-using Gadabout.Server.Framework;
+using Gadabout.Server.Core.Framework;
 
-namespace Gadabout.Server.Infrastructure.Modules
+namespace Gadabout.Server.Core.Infrastructure.Modules
 {
     public abstract class GenericServiceModule : Module, IServerModule
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gadabout.Server.Data
+namespace Gadabout.Server.Core.Data
 {
     public class Destination : RootEntity
     {

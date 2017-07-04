@@ -8,10 +8,10 @@ using Autofac.Integration.WebApi;
 using System.Reflection;
 using System.ComponentModel.Composition;
 using Autofac.Core;
-using Gadabout.Server.Contracts;
-using Gadabout.Server.Infrastructure.Modules;
+using Gadabout.Server.Core.Contracts;
+using Gadabout.Server.Core.Infrastructure.Modules;
 using Nancy.Hosting.Self;
-using Gadabout.Server.Infrastructure.Logging;
+using Gadabout.Server.Core.Infrastructure.Logging;
 using Gadabout.Server.NancyHosting.Module;
 using Nancy.Bootstrapper;
 

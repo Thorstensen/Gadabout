@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Colorful;
 
-namespace Gadabout.Server.Infrastructure.Logging
+namespace Gadabout.Server.Core.Infrastructure.Logging
 {
     public static class ConsoleLogger
     {

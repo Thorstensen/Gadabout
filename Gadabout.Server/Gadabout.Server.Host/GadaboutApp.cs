@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.Composition.Hosting;
 using System.Reflection;
 using System.ComponentModel.Composition.Primitives;
-using Gadabout.Server.Infrastructure;
+using Gadabout.Server.Core.Infrastructure;
 
 namespace Gadabout.Server.Host
 {

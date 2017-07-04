@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace Gadabout.Server.Infrastructure
+namespace Gadabout.Server.Core.Infrastructure
 {
     public static class AssemblyExtensions
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gadabout.Server.Framework
+namespace Gadabout.Server.Core.Framework
 {
     public enum InitializationPreference
     {

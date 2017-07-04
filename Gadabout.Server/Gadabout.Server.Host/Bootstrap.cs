@@ -1,8 +1,8 @@
 ﻿using Autofac;
 using Autofac.Integration.Mef;
-using Gadabout.Server.Contracts;
-using Gadabout.Server.Infrastructure;
-using Gadabout.Server.Infrastructure.Logging;
+using Gadabout.Server.Core.Contracts;
+using Gadabout.Server.Core.Infrastructure;
+using Gadabout.Server.Core.Infrastructure.Logging;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
@@ -15,7 +15,6 @@ namespace Gadabout.Server.Host
     public sealed class Bootstrap
     {
         private List<IServerModule> _modules = null;
-        private IContainer _container = null;
         private ContainerBuilder _containerBuilder = new ContainerBuilder();
 
         public IContainer Initialize()
@@ -48,9 +47,7 @@ namespace Gadabout.Server.Host
         private static ComposablePartCatalog GetComposableCatalog()
         {
             var modulesPath = Assembly.GetExecutingAssembly().GetModulesLocation();
-            var catalog = new DirectoryCatalog(modulesPath);
-
-            return catalog;
+            return new DirectoryCatalog(modulesPath);
         }
     }
 }

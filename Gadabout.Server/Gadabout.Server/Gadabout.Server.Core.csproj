@@ -7,8 +7,8 @@
     <ProjectGuid>{CB421FDB-51F6-4AA6-996C-685AD08A71C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gadabout.Server</RootNamespace>
-    <AssemblyName>Gadabout.Server</AssemblyName>
+    <RootNamespace>Gadabout.Server.Core</RootNamespace>
+    <AssemblyName>Gadabout.Server.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IApiController.cs" />
     <Compile Include="Contracts\INancyModule.cs" />
     <Compile Include="Contracts\IServerModule.cs" />
     <Compile Include="Data\Attraction.cs" />

@@ -9,7 +9,7 @@ using Autofac;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 using Nancy.Bootstrappers.Autofac;
-using Gadabout.Server.Infrastructure.Logging;
+using Gadabout.Server.Core.Infrastructure.Logging;
 
 namespace Gadabout.Server.NancyHosting.Module
 {

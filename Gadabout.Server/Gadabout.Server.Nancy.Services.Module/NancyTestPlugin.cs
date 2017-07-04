@@ -1,14 +1,15 @@
 ﻿using Nancy;
+using System;
 
 namespace Gadabout.Server.Nancy.Services.Module
 {
-    public class NancyTestPlugin : NancyModule
+    public class AckService : NancyModule
     {
-        public NancyTestPlugin()
+        public AckService()
         {
-            Get("/test", p =>
+            Get("/now", p =>
             {
-                return "test-response";
+                return $"Greetings. The time is: {DateTime.Now.ToString()}";
             });
         }
     }
