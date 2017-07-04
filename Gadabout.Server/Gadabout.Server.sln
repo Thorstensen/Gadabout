@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Host", "Gad
 		{CB421FDB-51F6-4AA6-996C-685AD08A71C3} = {CB421FDB-51F6-4AA6-996C-685AD08A71C3}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.NancyHosting.Module", "Gadabout.Server.Services\Gadabout.Server.NancyHosting.Module.csproj", "{4C4AEF27-41EB-4C45-BF31-83E16649C56F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Hosting.Module", "Gadabout.Server.Services\Gadabout.Server.Nancy.Hosting.Module.csproj", "{4C4AEF27-41EB-4C45-BF31-83E16649C56F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server", "Gadabout.Server\Gadabout.Server.csproj", "{CB421FDB-51F6-4AA6-996C-685AD08A71C3}"
 EndProject
@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{
 	ProjectSection(SolutionItems) = preProject
 		Resources\logo.png = Resources\logo.png
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Services.Module", "Gadabout.Server.Nancy.Services.Module\Gadabout.Server.Nancy.Services.Module.csproj", "{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Core", "Gadabout.Server.Nancy.Core\Gadabout.Server.Nancy.Core.csproj", "{E741BDCA-1C56-4237-AA79-23AD911B8A9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +44,14 @@ Global
 		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E741BDCA-1C56-4237-AA79-23AD911B8A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E741BDCA-1C56-4237-AA79-23AD911B8A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E741BDCA-1C56-4237-AA79-23AD911B8A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E741BDCA-1C56-4237-AA79-23AD911B8A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

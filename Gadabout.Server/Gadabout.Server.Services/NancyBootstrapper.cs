@@ -24,8 +24,12 @@ namespace Gadabout.Server.NancyHosting.Module
         {
             base.ApplicationStartup(container, pipelines);
             pipelines.BeforeRequest.AddItemToStartOfPipeline(ctx =>
-            {    
-                ConsoleLogger.Log($"Nancy Method {ctx.Request.Path} invoked by {ctx.Request.UserHostAddress}");
+            {
+                string callingHost = ctx.Request.UserHostAddress;
+                if (callingHost.StartsWith("::1"))
+                    callingHost = "localhost";
+
+                ConsoleLogger.Log($"Nancy Request {ctx.Request.Url} invoked by {callingHost}");
                 
                 return ctx.Response;
             });

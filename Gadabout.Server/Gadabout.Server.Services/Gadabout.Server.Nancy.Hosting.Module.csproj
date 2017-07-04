@@ -7,8 +7,8 @@
     <ProjectGuid>{4C4AEF27-41EB-4C45-BF31-83E16649C56F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gadabout.Server.NancyHosting.Module</RootNamespace>
-    <AssemblyName>Gadabout.Server.NancyHosting.Module</AssemblyName>
+    <RootNamespace>Gadabout.Server.Nancy.Hosting.Module</RootNamespace>
+    <AssemblyName>Gadabout.Server.Nancy.Hosting.Module</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -99,11 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NancyBaseModule.cs" />
     <Compile Include="NancyBootstrapper.cs" />
     <Compile Include="NancyHostBootstrapper.cs" />
     <Compile Include="NancySelfHost.cs" />
-    <Compile Include="NancyTestPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NancyHostingModule.cs" />
   </ItemGroup>
