@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gadabout.Server.Services.Module
+namespace Gadabout.Server.Contracts
 {
-    public interface INancyHost
+    /// <summary>
+    /// Marker interface
+    /// </summary>
+    public interface INancyModule
     {
     }
 }

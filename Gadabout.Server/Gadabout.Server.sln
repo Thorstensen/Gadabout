@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Host", "Gad
 		{CB421FDB-51F6-4AA6-996C-685AD08A71C3} = {CB421FDB-51F6-4AA6-996C-685AD08A71C3}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Services.Module", "Gadabout.Server.Services\Gadabout.Server.Services.Module.csproj", "{4C4AEF27-41EB-4C45-BF31-83E16649C56F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.NancyHosting.Module", "Gadabout.Server.Services\Gadabout.Server.NancyHosting.Module.csproj", "{4C4AEF27-41EB-4C45-BF31-83E16649C56F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server", "Gadabout.Server\Gadabout.Server.csproj", "{CB421FDB-51F6-4AA6-996C-685AD08A71C3}"
 EndProject

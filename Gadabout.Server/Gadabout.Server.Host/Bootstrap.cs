@@ -14,7 +14,7 @@ namespace Gadabout.Server.Host
 {
     public sealed class Bootstrap
     {
-        private IEnumerable<IServerModule> _modules = null;
+        private List<IServerModule> _modules = null;
         private IContainer _container = null;
         private ContainerBuilder _containerBuilder = new ContainerBuilder();
 
@@ -25,17 +25,24 @@ namespace Gadabout.Server.Host
 
             using (var container = containerBuilder.Build())
             {
-                var modules = container.Resolve<IEnumerable<IServerModule>>().ToList();
+                _modules = container.Resolve<IEnumerable<IServerModule>>().ToList();
 
-                modules.ForEach(module =>
+                _modules.ForEach(module =>
                 {
                     ConsoleLogger.Log($"Loading module {module.ModuleName}", System.Drawing.Color.Green);
                     module.RegisterTypes(_containerBuilder);
-                    module.StartModule();
                 });
             }
 
-            return _containerBuilder.Build();
+            var builtContainer = _containerBuilder.Build();
+
+            foreach(var module in _modules)
+            {
+                module.SetContainer(builtContainer);
+                module.StartModule();
+            }
+
+            return builtContainer;
         }
 
         private static ComposablePartCatalog GetComposableCatalog()

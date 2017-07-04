@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Core;
+using Gadabout.Server.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace Gadabout.Server.Contracts
         void StartModule();
         void StopModule();
         void RegisterTypes(ContainerBuilder builder);
+        void SetContainer(IContainer container);
         string ModuleName { get; }
+        IContainer Container { get; }
+        InitializationPreference InitializationPreference { get; }
     }
 }

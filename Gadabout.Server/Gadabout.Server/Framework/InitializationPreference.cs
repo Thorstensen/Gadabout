@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gadabout.Server.Services.Module
+namespace Gadabout.Server.Framework
 {
-    public class NancyHost : INancyHost
+    public enum InitializationPreference
     {
+        PreferFirst,
+        PerferLast,
     }
 }

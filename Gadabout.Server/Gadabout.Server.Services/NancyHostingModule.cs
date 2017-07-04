@@ -10,28 +10,28 @@ using System.ComponentModel.Composition;
 using Autofac.Core;
 using Gadabout.Server.Contracts;
 using Gadabout.Server.Infrastructure.Modules;
-using Gadabout.Server.Services.Module;
+using Nancy.Hosting.Self;
+using Gadabout.Server.Infrastructure.Logging;
+using Gadabout.Server.NancyHosting.Module;
+using Nancy.Bootstrapper;
 
-namespace Gadabout.Server.Services
+namespace Gadabout.Server.Services.NancyHosting
 {
     [Export(typeof(IServerModule))]
     public class NancyHostingModule : GenericServiceModule
     {
-        public NancyHostingModule()
-        {
-
-        }
-
         public override string ModuleName => "Nancy Hosting Module.";
 
         public override void RegisterTypes(ContainerBuilder builder)
         {
-            builder.RegisterType<NancyHost>().As<INancyHost>();
+            builder.RegisterType<NancyBootstrapper>().As<INancyBootstrapper>();
         }
 
         public override void StartModule()
         {
-           
+            var nancyBootStrapper = Container.Resolve<INancyBootstrapper>();
+            var nancyHost = new NancySelfHost(nancyBootStrapper);
+            nancyHost.Start();
         }
 
         public override void StopModule()
