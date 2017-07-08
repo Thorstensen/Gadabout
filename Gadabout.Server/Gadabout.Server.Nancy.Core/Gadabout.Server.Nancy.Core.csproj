@@ -46,8 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Framework\INancyEndpointConfigurator.cs" />
-    <Compile Include="Framework\NancyEndpointConfigurator.cs" />
+    <Compile Include="Framework\NancyBaseModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

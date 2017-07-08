@@ -15,12 +15,21 @@ namespace Gadabout.Server.Core.Database
 
         }
 
-        DbSet<User> Users { get; set; }
-        DbSet<Trip> Trips { get; set; }
-        DbSet<Destination> Destinations { get; set; }
-        DbSet<Attraction>  Attractions { get; set; } 
+        public DbSet<User> Users { get; set; }
+        public DbSet<Trip> Trips { get; set; }
+        public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Attraction>  Attractions { get; set; }
 
-
-        
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Types().Configure(conventionConfiguration =>
+            {
+                if (typeof(RootEntity).IsAssignableFrom(conventionConfiguration.ClrType))
+                {
+                    conventionConfiguration.Property(nameof(RootEntity.Version)).IsRowVersion();
+                }
+            });
+        }
     }
 }

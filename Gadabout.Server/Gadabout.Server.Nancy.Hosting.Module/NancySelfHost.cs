@@ -25,6 +25,7 @@ namespace Gadabout.Server.NancyHosting.Module
         public void Start()
         {
             _host.Start();
+            ConsoleLogger.Log($"Hosting Nancy Modules on: {HostingAddress}", System.Drawing.Color.LightSkyBlue);
         }
 
         public void Stop()

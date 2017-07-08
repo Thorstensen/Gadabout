@@ -45,6 +45,12 @@ namespace Gadabout.Server.NancyHosting.Module
             });
         }
 
+        protected override void RegisterRequestContainerModules(ILifetimeScope container, IEnumerable<ModuleRegistration> moduleRegistrationTypes)
+        {
+            base.RegisterRequestContainerModules(container, moduleRegistrationTypes);
 
+            var modules = string.Join(", ", moduleRegistrationTypes.Select(p => p.ModuleType.Name));
+            ConsoleLogger.Log($"Initializing Nancy Module(s): {modules}", System.Drawing.Color.LightSkyBlue);
+        }
     }
 }

@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace Gadabout.Server.Nancy.Core.Framework
 {
-    public interface INancyEndpointConfigurator
+    public abstract class NancyBaseModule : NancyModule
     {
-        void WithReturnValue(string path, Func<dynamic, object> d);
+        public NancyBaseModule(string prefix) : base("/api/v1/" + prefix)
+        {
+               
+        }
     }
 }

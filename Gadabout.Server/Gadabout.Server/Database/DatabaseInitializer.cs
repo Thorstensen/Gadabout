@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Gadabout.Server.Core.Database
 {
-    public class DatabaseInitializer : CreateDatabaseIfNotExists<DbContext>
+    public class DatabaseInitializer : CreateDatabaseIfNotExists<DataContext>
     {
+      
     }
 }

@@ -10,6 +10,7 @@ using Autofac;
 using Gadabout.Server.Core.Database;
 using Gadabout.Server.Core;
 using Gadabout.Server.Core.Infrastructure.Logging;
+using Gadabout.Server.Core.Repository;
 
 namespace Gadabout.Server.CoreModule
 {
@@ -21,6 +22,7 @@ namespace Gadabout.Server.CoreModule
         public override void RegisterTypes(ContainerBuilder builder)
         {
             builder.RegisterModule(new DatabaseModule());
+            builder.RegisterType<EntityRepository>().As<IEntityRepository>();
         }
 
         public override void StartModule()

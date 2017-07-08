@@ -12,6 +12,7 @@ namespace Gadabout.Server.Core.Data
         public RootEntity()
         {
             Id = Guid.NewGuid();
+            CreatedTime = DateTime.Now;
         }
 
         [Key]

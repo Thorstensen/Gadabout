@@ -22,6 +22,7 @@ namespace Gadabout.Server.Core
             {
                 var initializer = new DatabaseInitializer();
                 initializer.InitializeDatabase(ctx);
+                ctx.Users.Count();
             }
         }
     }
