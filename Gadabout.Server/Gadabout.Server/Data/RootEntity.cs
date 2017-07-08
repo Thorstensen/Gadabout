@@ -9,8 +9,13 @@ namespace Gadabout.Server.Core.Data
 {
     public class RootEntity
     {
+        public RootEntity()
+        {
+            Id = Guid.NewGuid();
+        }
+
         [Key]
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         DateTime CreatedTime { get; set; }
         public byte[] Version { get; set; }
     }
