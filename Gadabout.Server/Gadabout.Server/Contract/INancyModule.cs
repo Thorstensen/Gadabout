@@ -1,4 +1,4 @@
-﻿namespace Gadabout.Server.Core.Contracts
+﻿namespace Gadabout.Server.Core.Contract
 {
     /// <summary>
     /// Marker interface

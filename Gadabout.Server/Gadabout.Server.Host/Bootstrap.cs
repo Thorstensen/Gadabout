@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mef;
-using Gadabout.Server.Core.Contracts;
+using Gadabout.Server.Core.Contract;
 using Gadabout.Server.Core.Infrastructure;
 using Gadabout.Server.Core.Infrastructure.Logging;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ namespace Gadabout.Server.Host
 
             var builtContainer = _containerBuilder.Build();
 
-            foreach(var module in _modules)
+            foreach(var module in _modules.OrderBy(p => p.InitializationPreference))
             {
                 module.SetContainer(builtContainer);
                 module.StartModule();

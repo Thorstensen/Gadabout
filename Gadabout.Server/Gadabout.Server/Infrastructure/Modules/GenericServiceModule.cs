@@ -1,4 +1,4 @@
-﻿using Gadabout.Server.Core.Contracts;
+﻿using Gadabout.Server.Core.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using Gadabout.Server.Core.Framework;
 
 namespace Gadabout.Server.Core.Infrastructure.Modules
 {
-    public abstract class GenericServiceModule : Module, IServerModule
+    public abstract class BaseServerModule : Module, IServerModule
     {
         public abstract string ModuleName { get; }
 

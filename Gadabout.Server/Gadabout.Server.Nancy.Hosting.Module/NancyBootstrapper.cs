@@ -20,6 +20,8 @@ namespace Gadabout.Server.NancyHosting.Module
 
         }
 
+        
+
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
             base.ApplicationStartup(container, pipelines);
@@ -30,10 +32,9 @@ namespace Gadabout.Server.NancyHosting.Module
                     callingHost = "localhost";
 
                 ConsoleLogger.Log($"Nancy Request {ctx.Request.Url} invoked by {callingHost}");
-                
+
                 return ctx.Response;
             });
         }
-
     }
 }

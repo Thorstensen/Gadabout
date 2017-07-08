@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gadabout.Server.Core.Contracts
+namespace Gadabout.Server.Core.Contract
 {
     public interface IServerModule : IModule
     {

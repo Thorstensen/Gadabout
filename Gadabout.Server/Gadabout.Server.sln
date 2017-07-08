@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Core"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Hosting.Module", "Gadabout.Server.Nancy.Hosting.Module\Gadabout.Server.Nancy.Hosting.Module.csproj", "{4C4AEF27-41EB-4C45-BF31-83E16649C56F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Core.Module", "Gadabout.Server.CoreModule\Gadabout.Server.Core.Module.csproj", "{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{4C4AEF27-41EB-4C45-BF31-83E16649C56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C4AEF27-41EB-4C45-BF31-83E16649C56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C4AEF27-41EB-4C45-BF31-83E16649C56F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

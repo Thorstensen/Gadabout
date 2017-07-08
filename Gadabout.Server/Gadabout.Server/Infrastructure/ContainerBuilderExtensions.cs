@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Gadabout.Server.Core.Contracts;
+using Gadabout.Server.Core.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;

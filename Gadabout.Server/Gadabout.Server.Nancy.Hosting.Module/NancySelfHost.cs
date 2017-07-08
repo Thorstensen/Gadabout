@@ -23,7 +23,6 @@ namespace Gadabout.Server.NancyHosting.Module
             {
                 host.Start();
                 Console.WriteLine($"Nancy hosting running address: {HostingAddress}");
-                Console.ReadLine();
             }
         }
     }

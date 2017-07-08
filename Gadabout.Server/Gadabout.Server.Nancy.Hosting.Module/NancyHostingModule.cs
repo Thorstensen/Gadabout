@@ -8,7 +8,7 @@ using Autofac.Integration.WebApi;
 using System.Reflection;
 using System.ComponentModel.Composition;
 using Autofac.Core;
-using Gadabout.Server.Core.Contracts;
+using Gadabout.Server.Core.Contract;
 using Gadabout.Server.Core.Infrastructure.Modules;
 using Nancy.Hosting.Self;
 using Gadabout.Server.Core.Infrastructure.Logging;
@@ -18,7 +18,7 @@ using Nancy.Bootstrapper;
 namespace Gadabout.Server.Services.NancyHosting
 {
     [Export(typeof(IServerModule))]
-    public class NancyHostingModule : GenericServiceModule
+    public class NancyHostingModule : BaseServerModule
     {
         public override string ModuleName => "Nancy Hosting Module.";
 

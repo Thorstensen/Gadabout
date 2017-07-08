@@ -39,7 +39,14 @@
     <Reference Include="Colorful.Console, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Colorful.Console.1.1.2\lib\net452\Colorful.Console.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
@@ -50,8 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\INancyModule.cs" />
-    <Compile Include="Contracts\IServerModule.cs" />
+    <Compile Include="Contract\INancyModule.cs" />
+    <Compile Include="Contract\IServerModule.cs" />
+    <Compile Include="Database\DataContext.cs" />
+    <Compile Include="Database\IDataContext.cs" />
     <Compile Include="Data\Attraction.cs" />
     <Compile Include="Data\Destination.cs" />
     <Compile Include="Data\RootEntity.cs" />
@@ -63,8 +72,11 @@
     <Compile Include="Infrastructure\Logging\ConsoleLogger.cs" />
     <Compile Include="Infrastructure\Modules\GenericServiceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\EntitiesRepository.cs" />
+    <Compile Include="Repository\IEntitiesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
