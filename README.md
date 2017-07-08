@@ -5,11 +5,11 @@ Gadabout is an application used for tracking trips. First and foremost this repo
 
 #### This project currently uses these frameworks:
 
-* Nancy
-* Autofac
-* MEF
-* MEF Autofac Integration
-* Colorful Console
-* Newtonsoft Json
-* Topshelf
-* EntityFramework
+* [Nancy](http://nancyfx.org/ "Nancy Homepage")
+* [Autofac](https://autofac.org/ "Autofac Homepage")
+* [MEF](https://docs.microsoft.com/en-us/dotnet/framework/mef/index "MEF Homepage")
+* [MEF Autofac Integration](http://docs.autofac.org/en/latest/integration/mef.html "MEF Autofac Integration")
+* [Colorful Console](http://colorfulconsole.com/, "Colorful Console Homepage")
+* [Newtonsoft Json](http://www.newtonsoft.com/json "Newtonsoft Json Homepage")
+* [Topshelf](http://topshelf-project.com/ "Topshelf Homepage")
+* [EntityFramework](https://docs.microsoft.com/en-us/ef/ "Entity Framework")
