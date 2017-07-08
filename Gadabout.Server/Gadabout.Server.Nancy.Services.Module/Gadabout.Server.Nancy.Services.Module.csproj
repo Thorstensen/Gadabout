@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="AckService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -17,10 +17,12 @@ namespace Gadabout.Server.Core.Infrastructure.Modules
         public abstract void RegisterTypes(ContainerBuilder builder);
         public abstract void StartModule();
         public abstract void StopModule();
+        public virtual void ContainerUpdated(IContainer container) { }
 
         public void SetContainer(IContainer container)
         {
             Container = container;
+            ContainerUpdated(Container);
         }
 
         public IContainer Container { get; private set; }

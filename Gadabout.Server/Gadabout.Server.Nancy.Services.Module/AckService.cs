@@ -1,19 +1,14 @@
-﻿using Gadabout.Server.Nancy.Core;
+﻿using Gadabout.Server.Core.Database;
 using Nancy;
 using System;
-using Gadabout.Server.Nancy.Core.Framework;
 
 namespace Gadabout.Server.Nancy.Services.Module
 {
-    public class AckService : NancyBaseModule
+    public class AckService : NancyModule
     {
-        public AckService() : base("AckService")
+        public AckService(IDataContext context) : base("/ack")
         {
-        }
-
-        public override void RegisterEndpoints(INancyEndpointConfigurator configurator)
-        {
-            configurator.WithReturnValue("/now", p =>
+            Get("/now", p =>
             {
                 return $"Greetings. The time is: {DateTime.Now.ToString()}";
             });

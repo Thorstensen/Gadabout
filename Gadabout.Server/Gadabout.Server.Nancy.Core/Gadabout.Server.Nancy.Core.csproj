@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Framework\INancyEndpointConfigurator.cs" />
-    <Compile Include="NancyBaseModule.cs" />
     <Compile Include="Framework\NancyEndpointConfigurator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

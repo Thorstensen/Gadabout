@@ -20,22 +20,28 @@ namespace Gadabout.Server.Services.NancyHosting
     [Export(typeof(IServerModule))]
     public class NancyHostingModule : BaseServerModule
     {
+        private NancySelfHost _nancyHost;
+
         public override string ModuleName => "Nancy Hosting Module.";
 
         public override void RegisterTypes(ContainerBuilder builder)
         {
-           
+        }
+
+        public override void ContainerUpdated(IContainer container)
+        {
+            base.ContainerUpdated(container);
+            _nancyHost = new NancySelfHost(container);
         }
 
         public override void StartModule()
         {
-            var nancyHost = new NancySelfHost();
-            nancyHost.Start();
+            _nancyHost.Start();
         }
 
         public override void StopModule()
         {
-           
+            _nancyHost.Stop();
         }
     }
 }

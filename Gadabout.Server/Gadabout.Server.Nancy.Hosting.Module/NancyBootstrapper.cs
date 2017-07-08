@@ -8,21 +8,29 @@ using Nancy.Conventions;
 using Autofac;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using Nancy.Bootstrappers.Autofac;
 using Gadabout.Server.Core.Infrastructure.Logging;
+using Gadabout.Server.Core.Database;
+using Nancy.Configuration;
+using Nancy.Diagnostics;
+using Nancy.Bootstrappers.Autofac;
 
 namespace Gadabout.Server.NancyHosting.Module
 {
-    public class NancyBootstrapper : DefaultNancyBootstrapper, NancyHostBootstrapper
+    public class NancyBootstrapper : AutofacNancyBootstrapper
     {
-        public NancyBootstrapper()
-        {
+        private readonly ILifetimeScope _scope;
 
+        public NancyBootstrapper(ILifetimeScope scope)
+        {
+            _scope = scope;
         }
 
-        
+        protected override ILifetimeScope GetApplicationContainer()
+        {
+            return _scope;
+        }
 
-        protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
+        protected override void ApplicationStartup(ILifetimeScope container, IPipelines pipelines)
         {
             base.ApplicationStartup(container, pipelines);
             pipelines.BeforeRequest.AddItemToStartOfPipeline(ctx =>
@@ -36,5 +44,7 @@ namespace Gadabout.Server.NancyHosting.Module
                 return ctx.Response;
             });
         }
+
+
     }
 }
