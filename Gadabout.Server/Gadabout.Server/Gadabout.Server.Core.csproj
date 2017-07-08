@@ -59,10 +59,14 @@
   <ItemGroup>
     <Compile Include="Contract\INancyModule.cs" />
     <Compile Include="Contract\IServerModule.cs" />
+    <Compile Include="DatabaseModule.cs" />
+    <Compile Include="Database\DatabaseInitializer.cs" />
     <Compile Include="Database\DataContext.cs" />
     <Compile Include="Database\IDataContext.cs" />
     <Compile Include="Data\Attraction.cs" />
+    <Compile Include="Data\Country.cs" />
     <Compile Include="Data\Destination.cs" />
+    <Compile Include="Data\File.cs" />
     <Compile Include="Data\RootEntity.cs" />
     <Compile Include="Data\Trip.cs" />
     <Compile Include="Data\User.cs" />

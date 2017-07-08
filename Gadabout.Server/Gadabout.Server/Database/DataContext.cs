@@ -1,15 +1,24 @@
-﻿using System;
+﻿using Gadabout.Server.Core.Data;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Gadabout.Server.Core.Database
 {
-    public class DataContext : IDataContext
+    public class DataContext : DbContext, IDataContext
     {
+        DbSet<User> Users { get; set; }
+        DbSet<Trip> Trips { get; set; }
+        DbSet<Destination> Destinations { get; set; }
+        DbSet<Attraction>  Attractions { get; set; } 
 
-      
 
+        internal void CreateDatabase()
+        {
+            Users.Count();
+        }
     }
 }

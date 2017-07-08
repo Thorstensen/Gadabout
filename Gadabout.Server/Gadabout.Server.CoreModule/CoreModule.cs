@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using Gadabout.Server.Core.Database;
+using Gadabout.Server.Core;
+using Gadabout.Server.Core.Infrastructure.Logging;
 
 namespace Gadabout.Server.CoreModule
 {
@@ -17,12 +20,14 @@ namespace Gadabout.Server.CoreModule
 
         public override void RegisterTypes(ContainerBuilder builder)
         {
-           
+            builder.RegisterModule(new DatabaseModule());
         }
 
         public override void StartModule()
         {
-          
+            ConsoleLogger.Log("Initializing Database Layer");
+            DatabaseModule.InitializeDatabase(Container);
+            ConsoleLogger.Log("Database Layer initialization done", System.Drawing.Color.Green);
         }
 
         public override void StopModule()

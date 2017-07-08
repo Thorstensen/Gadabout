@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Gadabout.Server.Core.Data
 {
-    public class Attraction : RootEntity
+    public class File : RootEntity
     {
         public string Name { get; set; }
-
-        //Should probably be refactored to a blob-storage 
-        public List<File> Images { get; set; }
-
-        public virtual Destination Destination { get; set; }
+        public string Extension { get; set; }
+        public byte[] Data { get; set; }
     }
 }

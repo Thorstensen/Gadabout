@@ -12,12 +12,16 @@ namespace Gadabout.Server.Core.Infrastructure.Logging
     {
         public static void Log(string text)
         {
-            Colorful.Console.WriteLine(text);
+            var now = DateTime.Now;
+            var textToLog = $"[{now}]   {text}";
+            Colorful.Console.WriteLine(textToLog);
         }
 
         public static void Log(string text, Color color)
         {
-            Colorful.Console.WriteLine(text, color);
+            var now = DateTime.Now;
+            var textToLog = $"[{now}]   {text}";
+            Colorful.Console.WriteLine(textToLog, color);
         }
     }
 }

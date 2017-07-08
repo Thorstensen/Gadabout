@@ -1,4 +1,5 @@
-﻿using Nancy.Bootstrapper;
+﻿using Gadabout.Server.Core.Infrastructure.Logging;
+using Nancy.Bootstrapper;
 using Nancy.Hosting.Self;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace Gadabout.Server.NancyHosting.Module
             using (var host = new NancyHost(new Uri(HostingAddress), new NancyBootstrapper()))
             {
                 host.Start();
-                Console.WriteLine($"Nancy hosting running address: {HostingAddress}");
+                ConsoleLogger.Log($"Hosting Nancy modules on: {HostingAddress}");
             }
         }
     }
