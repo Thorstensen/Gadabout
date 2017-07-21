@@ -3,7 +3,7 @@
 # Gadabout
 Gadabout is an application used for tracking trips. First and foremost this repository consist of code written by a C# developer trying to learn web development where the fronted should be written with ASP.NET Core and Angular. The application will also function as a sandbox where new technologies, frameworks and methodologies will be tried out.
 
-#### This project currently uses these frameworks:
+#### This project uses the following:
 
 * [Nancy](http://nancyfx.org/ "Nancy Homepage")
 * [Autofac](https://autofac.org/ "Autofac Homepage")
@@ -13,3 +13,6 @@ Gadabout is an application used for tracking trips. First and foremost this repo
 * [Newtonsoft Json](http://www.newtonsoft.com/json "Newtonsoft Json Homepage")
 * [Topshelf](http://topshelf-project.com/ "Topshelf Homepage")
 * [EntityFramework](https://docs.microsoft.com/en-us/ef/ "Entity Framework")
+* [BCrypt.Net](https://bitbucket.org/vadim/bcrypt.net/ "BCrypt.NET")
+* [NUnit](http://nunit.org/ "NUnit")
+* [FakeItEasy](https://fakeiteasy.github.io/ "FakeItEasy")
