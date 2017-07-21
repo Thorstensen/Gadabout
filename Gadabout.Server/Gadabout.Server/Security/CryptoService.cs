@@ -9,9 +9,9 @@ namespace Gadabout.Server.Core.Security
 {
     public class CryptoService : ICryptoService
     {
-        public string GetHash(string plain)
+        public string GetHash(string plain, string salt)
         {
-            return BCrypt.Net.BCrypt.HashPassword(plain);
+            return BCrypt.Net.BCrypt.HashPassword(plain, salt);
         }
 
         public string GetSalt()

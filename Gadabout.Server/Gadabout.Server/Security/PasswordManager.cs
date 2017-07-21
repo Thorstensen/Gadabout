@@ -19,13 +19,13 @@ namespace Gadabout.Server.Core.Security
         public string GeneratePassword(string providedPassword, out string salt)
         {
             salt = _cryptoService.GetSalt();
-            return _cryptoService.GetHash(AddSalt(salt, providedPassword));
+            return _cryptoService.GetHash(providedPassword, salt);
         }
 
-        public bool VerifyPassword(string hash, string salt, string providedPassword)
+        public bool VerifyPassword(string providedPassword, string hash)
         {
-            var testableHash = _cryptoService.GetHash(AddSalt(salt, providedPassword));
-            return BCrypt.Net.BCrypt.Verify(testableHash, hash);
+            var testableHash = _cryptoService.GetHash(providedPassword, hash);
+            return BCrypt.Net.BCrypt.Verify(providedPassword, hash);
         }
 
         private string AddSalt(string salt, string password)

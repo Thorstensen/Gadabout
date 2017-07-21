@@ -10,6 +10,6 @@ namespace Gadabout.Server.Core.Security
     public interface ICryptoService
     {
         string GetSalt();
-        string GetHash(string plain);
+        string GetHash(string plain, string salt);
     }
 }
