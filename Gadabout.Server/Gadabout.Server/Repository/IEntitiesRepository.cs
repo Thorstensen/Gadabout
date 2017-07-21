@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Gadabout.Server.Core.Repository
 {
-    public interface IEntityRepository
+    public interface IEntityRepository<TEntity> where TEntity : RootEntity
     {
-        void Create<TEntity>(TEntity entity) where TEntity : RootEntity;
-        TEntity Read<TEntity>(Guid id) where TEntity : RootEntity;
-        TEntity Update<TEntity>(TEntity entity) where TEntity : RootEntity;
-        bool Delete<TEntity>(Guid id) where TEntity : RootEntity;
+        void Create(TEntity entity);
+        TEntity Read(Guid id);
+        TEntity Update(TEntity entity);
+        bool Delete(Guid id);
     }
 }

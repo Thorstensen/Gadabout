@@ -16,16 +16,16 @@ namespace Gadabout.Server.Nancy.Services.Module.Api
 {
     public class UserModule : NancyBaseModule
     {
-        private readonly IEntityRepository _entityRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserModule(IEntityRepository entityRepository) : base("users")
+        public UserModule(IUserRepository userRepository) : base("users")
         {
-            _entityRepository = entityRepository;
+            _userRepository = userRepository;
 
             Post("/new", d =>
             {
                 var user = this.Bind<User>();
-                _entityRepository.Create(user);
+                userRepository.Create(user);
 
                 return new Response
                 {

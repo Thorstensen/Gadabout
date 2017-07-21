@@ -11,7 +11,7 @@ namespace Gadabout.Server.Core.Repository
     /// <summary>
     /// Base CRUD repository for database transactions
     /// </summary>
-    public class EntityRepository : IEntityRepository
+    public abstract class EntityRepository<TEntity> : IEntityRepository<TEntity> where TEntity : RootEntity
     {
         private readonly IDataContext _context;
         public EntityRepository(IDataContext context)
@@ -19,7 +19,7 @@ namespace Gadabout.Server.Core.Repository
             _context = context;
         }
 
-        public void Create<TEntity>(TEntity entity) where TEntity : RootEntity
+        public virtual void Create(TEntity entity)
         {
             var context = (DataContext)_context;
             var set = context.Set<TEntity>();
@@ -27,17 +27,17 @@ namespace Gadabout.Server.Core.Repository
             context.SaveChanges();
         }
 
-        public bool Delete<TEntity>(Guid id) where TEntity : RootEntity
+        public virtual bool Delete(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public TEntity Read<TEntity>(Guid id) where TEntity : RootEntity
+        public virtual TEntity Read(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public TEntity Update<TEntity>(TEntity entity) where TEntity : RootEntity
+        public virtual TEntity Update(TEntity entity)
         {
             throw new NotImplementedException();
         }

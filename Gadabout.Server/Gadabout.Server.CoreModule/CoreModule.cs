@@ -11,6 +11,7 @@ using Gadabout.Server.Core.Database;
 using Gadabout.Server.Core;
 using Gadabout.Server.Core.Infrastructure.Logging;
 using Gadabout.Server.Core.Repository;
+using Gadabout.Server.Core.Security;
 
 namespace Gadabout.Server.CoreModule
 {
@@ -22,7 +23,10 @@ namespace Gadabout.Server.CoreModule
         public override void RegisterTypes(ContainerBuilder builder)
         {
             builder.RegisterModule(new DatabaseModule());
-            builder.RegisterType<EntityRepository>().As<IEntityRepository>();
+
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
+            builder.RegisterType<CryptoService>().As<ICryptoService>();
+            builder.RegisterType<PasswordManager>().As<IPasswordManager>();
         }
 
         public override void StartModule()

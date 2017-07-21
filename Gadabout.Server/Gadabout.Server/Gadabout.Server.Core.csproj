@@ -70,6 +70,7 @@
     <Compile Include="Data\RootEntity.cs" />
     <Compile Include="Data\Trip.cs" />
     <Compile Include="Data\User.cs" />
+    <Compile Include="Extensions\UserExtensions.cs" />
     <Compile Include="Framework\InitializationPreference.cs" />
     <Compile Include="Infrastructure\AssemblyExtensions.cs" />
     <Compile Include="Infrastructure\ContainerBuilderExtensions.cs" />
@@ -78,6 +79,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EntitiesRepository.cs" />
     <Compile Include="Repository\IEntitiesRepository.cs" />
+    <Compile Include="Repository\IUserRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Security\CryptoService.cs" />
+    <Compile Include="Security\ICryptoService.cs" />
+    <Compile Include="Security\IPasswordManager.cs" />
+    <Compile Include="Security\PasswordManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
