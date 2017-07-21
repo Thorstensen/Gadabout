@@ -32,7 +32,6 @@ namespace Gadabout.Server.Services.NancyHosting
         {
             base.ContainerUpdated(container);
             _nancyHost = new NancySelfHost(container);
-            
         }
 
         public override void StartModule()

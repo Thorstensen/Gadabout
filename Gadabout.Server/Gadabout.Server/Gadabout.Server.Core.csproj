@@ -70,7 +70,6 @@
     <Compile Include="Data\RootEntity.cs" />
     <Compile Include="Data\Trip.cs" />
     <Compile Include="Data\User.cs" />
-    <Compile Include="Extensions\UserExtensions.cs" />
     <Compile Include="Framework\InitializationPreference.cs" />
     <Compile Include="Infrastructure\AssemblyExtensions.cs" />
     <Compile Include="Infrastructure\ContainerBuilderExtensions.cs" />

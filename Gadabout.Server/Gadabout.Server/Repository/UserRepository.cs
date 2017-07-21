@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Gadabout.Server.Core.Data;
+﻿using Gadabout.Server.Core.Data;
 using Gadabout.Server.Core.Security;
-using Gadabout.Server.Core.Extensions;
 using Gadabout.Server.Core.Database;
+using System.Linq;
 
 namespace Gadabout.Server.Core.Repository
 {
@@ -27,6 +22,11 @@ namespace Gadabout.Server.Core.Repository
             entity.PasswordSalt = salt;
             entity.HashedPassword = _passwordManager.Hash(entity.Password + salt);
             base.Create(entity);
+        }
+
+        public User GetUser(string userName)
+        {
+            return Context.Users.FirstOrDefault(p => p.UserName == userName);
         }
     }
 }

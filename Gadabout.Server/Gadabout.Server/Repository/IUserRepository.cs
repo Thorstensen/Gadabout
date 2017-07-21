@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Gadabout.Server.Core.Repository
 {
-    /// <summary>
-    /// Marker interface
-    /// </summary>
     public interface IUserRepository : IEntityRepository<User>
     {
+        User GetUser(string userName);
     }
 }

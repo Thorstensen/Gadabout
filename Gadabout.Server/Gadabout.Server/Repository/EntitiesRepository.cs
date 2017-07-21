@@ -13,15 +13,15 @@ namespace Gadabout.Server.Core.Repository
     /// </summary>
     public abstract class EntityRepository<TEntity> : IEntityRepository<TEntity> where TEntity : RootEntity
     {
-        private readonly IDataContext _context;
+        protected readonly IDataContext Context;
         public EntityRepository(IDataContext context)
         {
-            _context = context;
+            Context = context;
         }
 
         public virtual void Create(TEntity entity)
         {
-            var context = (DataContext)_context;
+            var context = (DataContext)Context;
             var set = context.Set<TEntity>();
             set.Add(entity);
             context.SaveChanges();
