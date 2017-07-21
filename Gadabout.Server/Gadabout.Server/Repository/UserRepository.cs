@@ -18,8 +18,7 @@ namespace Gadabout.Server.Core.Repository
         {
             var result = _passwordManager.GeneratePassword(entity.Password);
             entity.HashedPassword = result.Hash;
-            entity.PasswordSalt = result.Salt;
-
+          
             base.Create(entity);
         }
 

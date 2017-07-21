@@ -2,7 +2,6 @@
 using Gadabout.Server.Core.Data;
 using Gadabout.Server.Core.Repository;
 using Gadabout.Server.Core.Security;
-using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
