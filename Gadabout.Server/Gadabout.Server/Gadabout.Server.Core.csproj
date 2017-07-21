@@ -84,6 +84,7 @@
     <Compile Include="Repository\IUserRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Security\CryptoService.cs" />
+    <Compile Include="Security\GeneratedPasswordResult.cs" />
     <Compile Include="Security\ICryptoService.cs" />
     <Compile Include="Security\IPasswordManager.cs" />
     <Compile Include="Security\PasswordManager.cs" />

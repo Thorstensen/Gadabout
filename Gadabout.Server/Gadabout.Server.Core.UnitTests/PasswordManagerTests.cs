@@ -19,11 +19,10 @@ namespace Gadabout.Server.Core.UnitTests
         public void VerifyPassword_ShouldReturnTrue()
         {
             const string PlainPassword = "TestP@ssw0rd";
-            string salt = string.Empty;
-
+           
             var passwordManager = new PasswordManager(new CryptoService());
-            var hashedPassword = passwordManager.GeneratePassword(PlainPassword, out salt);
-            Assert.IsTrue(passwordManager.VerifyPassword(PlainPassword, hashedPassword));
+            var hashResult = passwordManager.GeneratePassword(PlainPassword);
+            Assert.IsTrue(passwordManager.VerifyPassword(PlainPassword, hashResult.Hash));
         }
 
 
@@ -31,9 +30,8 @@ namespace Gadabout.Server.Core.UnitTests
         public void VerifyPassword_ShouldReturnFalse()
         {
             var passwordManager = new PasswordManager(new CryptoService());
-            string salt = string.Empty;
-            var hashedPassword = passwordManager.GeneratePassword("Somepassword", out salt);
-            Assert.IsFalse(passwordManager.VerifyPassword("someOtHerPassW0rd", hashedPassword));
+            var hashResult = passwordManager.GeneratePassword("Somepassword");
+            Assert.IsFalse(passwordManager.VerifyPassword("someOtHerPassW0rd", hashResult.Hash));
         }
     }
 }

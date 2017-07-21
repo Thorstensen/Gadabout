@@ -16,9 +16,9 @@ namespace Gadabout.Server.Core.Repository
 
         public override void Create(User entity)
         {
-            string salt = string.Empty;
-            entity.HashedPassword = _passwordManager.GeneratePassword(entity.Password, out salt);
-            entity.PasswordSalt = salt;
+            var result = _passwordManager.GeneratePassword(entity.Password);
+            entity.HashedPassword = result.Hash;
+            entity.PasswordSalt = result.Salt;
 
             base.Create(entity);
         }

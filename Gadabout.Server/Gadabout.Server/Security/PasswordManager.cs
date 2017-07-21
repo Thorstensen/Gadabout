@@ -16,21 +16,17 @@ namespace Gadabout.Server.Core.Security
             _cryptoService = cryptoService;
         }
 
-        public string GeneratePassword(string providedPassword, out string salt)
+        public GeneratedPasswordResult GeneratePassword(string providedPassword)
         {
-            salt = _cryptoService.GetSalt();
-            return _cryptoService.GetHash(providedPassword, salt);
+            var salt = _cryptoService.GetSalt();
+            var hash = _cryptoService.GetHash(providedPassword, salt);
+
+            return new GeneratedPasswordResult(hash, salt);
         }
 
         public bool VerifyPassword(string providedPassword, string hash)
         {
-            var testableHash = _cryptoService.GetHash(providedPassword, hash);
             return BCrypt.Net.BCrypt.Verify(providedPassword, hash);
-        }
-
-        private string AddSalt(string salt, string password)
-        {
-            return salt + password;
         }
     }
 }
