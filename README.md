@@ -3,7 +3,7 @@
 # Gadabout
 Gadabout is an application used for tracking trips. First and foremost this repository consist of code written by a C# developer trying to learn web development where the fronted should be written with ASP.NET Core and Angular. The application will also function as a sandbox where new technologies, frameworks and methodologies will be tried out.
 
-#### This project uses the following:
+#### This project are using the following NuGet packages:
 
 * [Nancy](http://nancyfx.org/ "Nancy Homepage")
 * [Autofac](https://autofac.org/ "Autofac Homepage")
