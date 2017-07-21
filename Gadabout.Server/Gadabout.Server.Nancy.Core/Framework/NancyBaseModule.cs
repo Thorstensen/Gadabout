@@ -15,14 +15,5 @@ namespace Gadabout.Server.Nancy.Core.Framework
         {
                
         }
-
-        protected dynamic GetBody(Stream body)
-        {
-            int length = (int)body.Length; 
-            byte[] data = new byte[length];
-            body.Read(data, 0, length);
-            return JsonConvert.DeserializeObject(System.Text.Encoding.Default.GetString(data));
-
-        }
     }
 }

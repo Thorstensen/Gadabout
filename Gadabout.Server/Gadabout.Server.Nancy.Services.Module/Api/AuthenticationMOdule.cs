@@ -1,4 +1,5 @@
 ﻿using Gadabout.Server.Core.Repository;
+using Gadabout.Server.Nancy.Core.Extensions;
 using Gadabout.Server.Nancy.Core.Framework;
 using Nancy;
 using System;
@@ -19,7 +20,7 @@ namespace Gadabout.Server.Nancy.Services.Module.Api
 
             Post("/login", d =>
             {
-                var body = GetBody(Request.Body);
+                var body = Request.ReadHttpBody();
                 var userName = body.UserName.Value;
                 var user = _userRepository.GetUser(userName);
 
