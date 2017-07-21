@@ -9,17 +9,14 @@ namespace Gadabout.Server.Core.Security
 {
     public class CryptoService : ICryptoService
     {
-        private const int _saltLength = 32;
-
-        
-        public string GenerateSalt()
+        public string GetHash(string plain)
         {
-            using(var provider = new RNGCryptoServiceProvider())
-            {
-                var salt = new byte[_saltLength];
-                provider.GetNonZeroBytes(salt);
-                return Convert.ToBase64String(salt);
-            }
+            return BCrypt.Net.BCrypt.HashPassword(plain);
+        }
+
+        public string GetSalt()
+        {
+            return BCrypt.Net.BCrypt.GenerateSalt();
         }
     }
 }

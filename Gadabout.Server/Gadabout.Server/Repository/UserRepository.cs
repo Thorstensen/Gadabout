@@ -7,20 +7,19 @@ namespace Gadabout.Server.Core.Repository
 {
     public class UserRepository : EntityRepository<User>, IUserRepository
     {
-        private readonly ICryptoService _cryptoService;
         private readonly IPasswordManager _passwordManager;
 
-        public UserRepository(ICryptoService cryptoService, IPasswordManager passwordManager, IDataContext context) : base(context)
+        public UserRepository(IPasswordManager passwordManager, IDataContext context) : base(context)
         {
-            _cryptoService = cryptoService;
             _passwordManager = passwordManager;
         }
 
         public override void Create(User entity)
         {
-            var salt = _cryptoService.GenerateSalt();
+            string salt = string.Empty;
+            entity.HashedPassword = _passwordManager.GeneratePassword(entity.Password, out salt);
             entity.PasswordSalt = salt;
-            entity.HashedPassword = _passwordManager.Hash(entity.Password + salt);
+
             base.Create(entity);
         }
 

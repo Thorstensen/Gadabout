@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gadabout.Server.Core.Contract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Gadabout.Server.Core.Security
 {
     public interface ICryptoService
     {
-        string GenerateSalt();
-
+        string GetSalt();
+        string GetHash(string plain);
     }
 }

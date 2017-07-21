@@ -9,13 +9,28 @@ namespace Gadabout.Server.Core.Security
 {
     public class PasswordManager : IPasswordManager
     {
-        public string Hash(string password)
-        {
-            var sha512 = new SHA512CryptoServiceProvider();
-            var bytes = Encoding.Default.GetBytes(password);
-            var hashedValue = sha512.ComputeHash(bytes);
+        private readonly ICryptoService _cryptoService;
 
-            return Encoding.Default.GetString(hashedValue);
+        public PasswordManager(ICryptoService cryptoService)
+        {
+            _cryptoService = cryptoService;
+        }
+
+        public string GeneratePassword(string providedPassword, out string salt)
+        {
+            salt = _cryptoService.GetSalt();
+            return _cryptoService.GetHash(AddSalt(salt, providedPassword));
+        }
+
+        public bool VerifyPassword(string hash, string salt, string providedPassword)
+        {
+            var testableHash = _cryptoService.GetHash(AddSalt(salt, providedPassword));
+            return BCrypt.Net.BCrypt.Verify(testableHash, hash);
+        }
+
+        private string AddSalt(string salt, string password)
+        {
+            return salt + password;
         }
     }
 }

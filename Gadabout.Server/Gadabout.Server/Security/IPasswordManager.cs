@@ -8,6 +8,7 @@ namespace Gadabout.Server.Core.Security
 {
     public interface IPasswordManager
     {
-        string Hash(string plainText);
+        string GeneratePassword(string plainText, out string salt);
+        bool VerifyPassword(string hash, string salt, string providedPassword);
     }
 }
