@@ -11,6 +11,9 @@ using Microsoft.Owin.Hosting;
 using Owin;
 using Gadabout.Server.Nancy.Core.Framework;
 using Nancy.Owin;
+using Microsoft.Owin.Security.OAuth;
+using Gadabout.Server.Nancy.Owin.Hosting.Module.Security;
+using Microsoft.Owin;
 
 namespace Gadabout.Server.Nancy.Owin.Hosting.Module
 {
@@ -41,10 +44,34 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module
         {
             return app =>
             {
-                var nancyOptions = new NancyOptions();
-                nancyOptions.Bootstrapper = new NancyBootstrapper(Container);
+                ConfigureOAuth(app);
+
+                var nancyOptions = new NancyOptions()
+                {
+                    Bootstrapper = new NancyBootstrapper(Container)
+                };
                 app.UseNancy(nancyOptions);
             };
+        }
+
+        private void ConfigureOAuth(IAppBuilder app)
+        {
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
+            {
+                Provider = new OAuthTokenProvider(
+                   req => req.Query.Get("bearer_token"),
+                   req => req.Query.Get("access_token"),
+                   req => req.Query.Get("token"),
+                   req => req.Headers.Get("X-Token"))
+            });
+
+            app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
+            {
+                AllowInsecureHttp = true, // you should use this for debugging only
+                TokenEndpointPath = new PathString("/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromHours(8),
+                Provider = new AuthorizationProvider(),
+            });
         }
     }
 }
