@@ -51,5 +51,11 @@ namespace Gadabout.Server.Nancy.Core.Framework
             var modules = string.Join(", ", moduleRegistrationTypes.Select(p => p.ModuleType.Name));
             ConsoleLogger.Log($"Initializing Nancy Module(s): {modules}", System.Drawing.Color.LightSkyBlue);
         }
+
+        protected override IEnumerable<INancyModule> GetAllModules(ILifetimeScope container)
+        {
+            var all = base.GetAllModules(container);
+            return all;
+        }
     }
 }

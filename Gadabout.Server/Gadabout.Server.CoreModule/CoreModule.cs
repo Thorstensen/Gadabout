@@ -27,6 +27,7 @@ namespace Gadabout.Server.CoreModule
             builder.RegisterType<UserRepository>().As<IUserRepository>();
             builder.RegisterType<CryptoService>().As<ICryptoService>();
             builder.RegisterType<PasswordManager>().As<IPasswordManager>();
+            builder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
         }
 
         public override void StartModule()

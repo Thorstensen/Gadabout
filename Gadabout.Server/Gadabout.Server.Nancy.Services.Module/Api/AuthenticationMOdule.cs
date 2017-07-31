@@ -21,21 +21,21 @@ namespace Gadabout.Server.Nancy.Services.Module.Api
             _userRepository = userRepository;
             _passwordManager = passwordManager;
 
-            Post("/login", d =>
-            {
-                var body = Request.ReadHttpBody();
-                var userName = (string)body.UserName.Value;
-                var password = body.Password.Value;
-                var user = _userRepository.GetUser(userName);
+            //Post("/login", d =>
+            //{
+            //    var body = Request.ReadHttpBody();
+            //    var userName = (string)body.UserName.Value;
+            //    var password = body.Password.Value;
+            //    var user = _userRepository.GetUser(userName);
 
-                if (!passwordManager.VerifyPassword(password, user.HashedPassword))
-                    return new Response { StatusCode = HttpStatusCode.Forbidden };
+            //    if (!passwordManager.VerifyPassword(password, user.HashedPassword))
+            //        return new Response { StatusCode = HttpStatusCode.Forbidden };
 
-                return new Response
-                {
-                    StatusCode = HttpStatusCode.OK
-                };
-            });
+            //    return new Response
+            //    {
+            //        StatusCode = HttpStatusCode.OK
+            //    };
+            //});
         }
     }
 }

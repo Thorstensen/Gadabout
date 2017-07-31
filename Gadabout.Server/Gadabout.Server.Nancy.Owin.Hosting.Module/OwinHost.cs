@@ -14,6 +14,7 @@ using Nancy.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Gadabout.Server.Nancy.Owin.Hosting.Module.Security;
 using Microsoft.Owin;
+using Gadabout.Server.Core.Security;
 
 namespace Gadabout.Server.Nancy.Owin.Hosting.Module
 {
@@ -68,9 +69,9 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module
             app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
             {
                 AllowInsecureHttp = true, // you should use this for debugging only
-                TokenEndpointPath = new PathString("/token"),
+                TokenEndpointPath = new PathString("/login"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(8),
-                Provider = new AuthorizationProvider(),
+                Provider = new AuthorizationProvider(Container.Resolve<IAuthenticationService>()),
             });
         }
     }

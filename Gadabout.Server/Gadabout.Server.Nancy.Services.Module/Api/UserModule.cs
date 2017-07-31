@@ -25,6 +25,9 @@ namespace Gadabout.Server.Nancy.Services.Module.Api
 
             Post("/new", d =>
             {
+                if(!IsAuthenticated)
+                    return HttpStatusCode.Forbidden;
+
                 var user = this.Bind<User>();
                 userRepository.Create(user);
 

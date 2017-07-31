@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin.Security.OAuth;
+﻿using Gadabout.Server.Core.Security;
+using Microsoft.Owin.Security.OAuth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,12 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module.Security
 {
     public class AuthorizationProvider : OAuthAuthorizationServerProvider
     {
+        private readonly IAuthenticationService _authenticationService;
+        public AuthorizationProvider(IAuthenticationService authenticationService)
+        {
+            _authenticationService = authenticationService;
+        }
+
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated();
@@ -26,10 +33,14 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module.Security
 
             var credentials = context.GetCredentials();
 
-            //TODO: Need to add check against database
+            if (!_authenticationService.AuthenticateUser(credentials.UserName, credentials.Password))
+            {
+                context.SetError("invalid_grant", "Invalid credentials.");
+                return base.GrantResourceOwnerCredentials(context);
+            }
 
             var oAuthIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
-            oAuthIdentity.AddClaim(new Claim(ClaimTypes.Name, "TEST!"));
+            oAuthIdentity.AddClaim(new Claim(ClaimTypes.Name, credentials.UserName));
 
             context.Validated(oAuthIdentity);
             return base.GrantResourceOwnerCredentials(context);
