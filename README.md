@@ -1,7 +1,7 @@
 ![alt text](https://raw.githubusercontent.com/thorstensen/gadabout/master/Gadabout.Server/Resources/logo.png)
 
 # Gadabout
-Gadabout is an application used for tracking trips. First and foremost this repository consist of code written by a C# developer trying to learn web development where the fronted should be written with ASP.NET Core and Angular. The application will also function as a sandbox where new technologies, frameworks and methodologies will be tried out.
+Gadabout is an application used for tracking trips. First and foremost this repository consist of code written by a C# developer trying to learn web development where the fronted shall be written with ASP.NET Core and Angular. The application will also function as a sandbox where new technologies, frameworks and methodologies will be tried out.
 
 #### This project are using the following NuGet packages:
 
