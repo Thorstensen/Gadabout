@@ -8,13 +8,12 @@ using Nancy.Conventions;
 using Autofac;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using Gadabout.Server.Core.Infrastructure.Logging;
-using Gadabout.Server.Core.Database;
 using Nancy.Configuration;
 using Nancy.Diagnostics;
 using Nancy.Bootstrappers.Autofac;
+using Gadabout.Server.Core.Infrastructure.Logging;
 
-namespace Gadabout.Server.NancyHosting.Module
+namespace Gadabout.Server.Nancy.Core.Framework
 {
     public class NancyBootstrapper : AutofacNancyBootstrapper
     {

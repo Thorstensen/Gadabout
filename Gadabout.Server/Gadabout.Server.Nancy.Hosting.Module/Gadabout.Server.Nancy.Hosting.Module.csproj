@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Gadabout.Server.Nancy.Hosting.Module</RootNamespace>
     <AssemblyName>Gadabout.Server.Nancy.Hosting.Module</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.4.0.0-rc3-316\lib\net451\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.Mef, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mef.4.0.0\lib\net45\Autofac.Integration.Mef.dll</HintPath>
@@ -99,7 +100,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NancyBootstrapper.cs" />
     <Compile Include="NancySelfHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NancyHostingModule.cs" />
@@ -109,6 +109,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gadabout.Server.Nancy.Core\Gadabout.Server.Nancy.Core.csproj">
+      <Project>{E741BDCA-1C56-4237-AA79-23AD911B8A9C}</Project>
+      <Name>Gadabout.Server.Nancy.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gadabout.Server\Gadabout.Server.Core.csproj">
       <Project>{CB421FDB-51F6-4AA6-996C-685AD08A71C3}</Project>
       <Name>Gadabout.Server.Core</Name>

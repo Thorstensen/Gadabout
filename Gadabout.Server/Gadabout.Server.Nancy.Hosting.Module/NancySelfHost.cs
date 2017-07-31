@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Gadabout.Server.Core.Infrastructure.Logging;
+using Gadabout.Server.Nancy.Core.Framework;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Hosting.Self;

@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{178DBEA5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Core.UnitTests", "Gadabout.Server.Core.UnitTests\Gadabout.Server.Core.UnitTests.csproj", "{D5AB5F8D-6445-413B-B315-7946E751C461}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Owin.Hosting.Module", "Gadabout.Server.Nancy.Owin.Hosting.Module\Gadabout.Server.Nancy.Owin.Hosting.Module.csproj", "{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{D5AB5F8D-6445-413B-B315-7946E751C461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5AB5F8D-6445-413B-B315-7946E751C461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5AB5F8D-6445-413B-B315-7946E751C461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
