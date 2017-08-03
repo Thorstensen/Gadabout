@@ -15,6 +15,7 @@ using Microsoft.Owin.Security.OAuth;
 using Gadabout.Server.Nancy.Owin.Hosting.Module.Security;
 using Microsoft.Owin;
 using Gadabout.Server.Core.Security;
+using Gadabout.Server.Core.Infrastructure.Logging;
 
 namespace Gadabout.Server.Nancy.Owin.Hosting.Module
 {
@@ -34,6 +35,7 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module
         public override void StartModule()
         {
             _webApp = WebApp.Start(url, GetStartupConfig());
+            ConsoleLogger.Log($"OWIN Hosted successfully on: {url}", LogLevel.Information);
         }
 
         public override void StopModule()

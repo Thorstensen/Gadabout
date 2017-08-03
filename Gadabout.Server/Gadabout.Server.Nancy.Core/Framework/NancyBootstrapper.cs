@@ -12,6 +12,8 @@ using Nancy.Configuration;
 using Nancy.Diagnostics;
 using Nancy.Bootstrappers.Autofac;
 using Gadabout.Server.Core.Infrastructure.Logging;
+using Gadabout.Server.Core.Security;
+using NancyContextExtensions = Gadabout.Server.Nancy.Core.Extensions;
 
 namespace Gadabout.Server.Nancy.Core.Framework
 {
@@ -33,7 +35,14 @@ namespace Gadabout.Server.Nancy.Core.Framework
         {
             base.ApplicationStartup(container, pipelines);
             pipelines.BeforeRequest.AddItemToStartOfPipeline(ctx =>
-            {
+            {               
+               var route = ctx.ResolvedRoute;
+               
+               // ctx.IsAuthenticated();
+               //Add support here to check wheter the resolved route is whitelisted
+               //This enables us to avoid checking if the user is authenticated within the method
+               //If route is not whitelisted, check for authentication
+
                 string callingHost = ctx.Request.UserHostAddress;
                 if (callingHost.StartsWith("::1"))
                     callingHost = "localhost";
@@ -49,12 +58,13 @@ namespace Gadabout.Server.Nancy.Core.Framework
             base.RegisterRequestContainerModules(container, moduleRegistrationTypes);
 
             var modules = string.Join(", ", moduleRegistrationTypes.Select(p => p.ModuleType.Name));
-            ConsoleLogger.Log($"Initializing Nancy Module(s): {modules}", System.Drawing.Color.LightSkyBlue);
+            ConsoleLogger.Log($"Initializing Nancy Module(s): {modules}", LogLevel.Information);
         }
 
         protected override IEnumerable<INancyModule> GetAllModules(ILifetimeScope container)
         {
             var all = base.GetAllModules(container);
+          
             return all;
         }
     }

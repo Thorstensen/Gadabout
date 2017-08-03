@@ -94,13 +94,13 @@
     <Analyzer Include="..\packages\AsyncUsageAnalyzers.1.0.0-alpha003\analyzers\dotnet\AsyncUsageAnalyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gadabout.Server.Core\Gadabout.Server.Core.csproj">
+      <Project>{cb421fdb-51f6-4aa6-996c-685ad08a71c3}</Project>
+      <Name>Gadabout.Server.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gadabout.Server.Nancy.Core\Gadabout.Server.Nancy.Core.csproj">
       <Project>{E741BDCA-1C56-4237-AA79-23AD911B8A9C}</Project>
       <Name>Gadabout.Server.Nancy.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gadabout.Server\Gadabout.Server.Core.csproj">
-      <Project>{CB421FDB-51F6-4AA6-996C-685AD08A71C3}</Project>
-      <Name>Gadabout.Server.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

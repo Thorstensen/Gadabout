@@ -39,29 +39,8 @@
     <Reference Include="Autofac.Integration.Mef, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mef.4.0.0\lib\net45\Autofac.Integration.Mef.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Integration.WebApi, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.WebApi.3.1.0\lib\net40\Autofac.Integration.WebApi.dll</HintPath>
-    </Reference>
     <Reference Include="Colorful.Console, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Colorful.Console.1.1.2\lib\net452\Colorful.Console.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.3.1.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nancy.2.0.0-clinteastwood\lib\net452\Nancy.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy.Bootstrappers.Autofac, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nancy.Bootstrappers.Autofac.2.0.0-clinteastwood\lib\net452\Nancy.Bootstrappers.Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy.Hosting.Self, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nancy.Hosting.Self.2.0.0-clinteastwood\lib\net452\Nancy.Hosting.Self.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -71,18 +50,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -106,29 +76,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gadabout.Server.CoreModule\Gadabout.Server.Core.Module.csproj">
-      <Project>{50ef658e-b960-42e6-8eeb-6e2d5ff5975b}</Project>
-      <Name>Gadabout.Server.Core.Module</Name>
+    <ProjectReference Include="..\Gadabout.Server.Core\Gadabout.Server.Core.csproj">
+      <Project>{cb421fdb-51f6-4aa6-996c-685ad08a71c3}</Project>
+      <Name>Gadabout.Server.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gadabout.Server.Nancy.Core\Gadabout.Server.Nancy.Core.csproj">
       <Project>{e741bdca-1c56-4237-aa79-23ad911b8a9c}</Project>
       <Name>Gadabout.Server.Nancy.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gadabout.Server.Nancy.Hosting.Module\Gadabout.Server.Nancy.Hosting.Module.csproj">
-      <Project>{4c4aef27-41eb-4c45-bf31-83e16649c56f}</Project>
-      <Name>Gadabout.Server.Nancy.Hosting.Module</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gadabout.Server.Nancy.Owin.Hosting.Module\Gadabout.Server.Nancy.Owin.Hosting.Module.csproj">
-      <Project>{0590c4e8-0ebd-460e-b0d3-b42a410afcfb}</Project>
-      <Name>Gadabout.Server.Nancy.Owin.Hosting.Module</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gadabout.Server.Nancy.Services.Module\Gadabout.Server.Nancy.Services.Module.csproj">
-      <Project>{461a8ab7-dbda-455d-9b68-49ebe27cad52}</Project>
-      <Name>Gadabout.Server.Nancy.Services.Module</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gadabout.Server\Gadabout.Server.Core.csproj">
-      <Project>{CB421FDB-51F6-4AA6-996C-685AD08A71C3}</Project>
-      <Name>Gadabout.Server.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,7 @@
 ﻿using Gadabout.Server.Core.Contract;
 using Gadabout.Server.Core.Infrastructure.Modules;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autofac;
-using Gadabout.Server.Core.Database;
 using Gadabout.Server.Core;
 using Gadabout.Server.Core.Infrastructure.Logging;
 using Gadabout.Server.Core.Repository;
@@ -34,7 +28,7 @@ namespace Gadabout.Server.CoreModule
         {
             ConsoleLogger.Log("Initializing Database Layer");
             DatabaseModule.InitializeDatabase(Container);
-            ConsoleLogger.Log("Database Layer initialization done", System.Drawing.Color.Green);
+            ConsoleLogger.Log("Database Layer initialization done", LogLevel.Trace);
         }
 
         public override void StopModule()

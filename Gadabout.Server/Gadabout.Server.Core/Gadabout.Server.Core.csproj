@@ -78,6 +78,7 @@
     <Compile Include="Infrastructure\AssemblyExtensions.cs" />
     <Compile Include="Infrastructure\ContainerBuilderExtensions.cs" />
     <Compile Include="Infrastructure\Logging\ConsoleLogger.cs" />
+    <Compile Include="Infrastructure\Logging\LogLevel.cs" />
     <Compile Include="Infrastructure\Modules\GenericServiceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EntitiesRepository.cs" />

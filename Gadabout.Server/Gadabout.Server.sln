@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Host", "Gad
 		{CB421FDB-51F6-4AA6-996C-685AD08A71C3} = {CB421FDB-51F6-4AA6-996C-685AD08A71C3}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Core", "Gadabout.Server\Gadabout.Server.Core.csproj", "{CB421FDB-51F6-4AA6-996C-685AD08A71C3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licence", "Licence", "{5ABEF47C-62FF-45FC-BFC9-A40ADA45C405}"
 	ProjectSection(SolutionItems) = preProject
 		LogoCredit.html = LogoCredit.html
@@ -24,15 +22,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Core", "Gadabout.Server.Nancy.Core\Gadabout.Server.Nancy.Core.csproj", "{E741BDCA-1C56-4237-AA79-23AD911B8A9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Hosting.Module", "Gadabout.Server.Nancy.Hosting.Module\Gadabout.Server.Nancy.Hosting.Module.csproj", "{4C4AEF27-41EB-4C45-BF31-83E16649C56F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Core.Module", "Gadabout.Server.CoreModule\Gadabout.Server.Core.Module.csproj", "{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{178DBEA5-1AB1-4D20-B63A-89EA54DF9DBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Core.UnitTests", "Gadabout.Server.Core.UnitTests\Gadabout.Server.Core.UnitTests.csproj", "{D5AB5F8D-6445-413B-B315-7946E751C461}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Nancy.Owin.Hosting.Module", "Gadabout.Server.Nancy.Owin.Hosting.Module\Gadabout.Server.Nancy.Owin.Hosting.Module.csproj", "{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Core.Module", "Gadabout.Server.Core.Module\Gadabout.Server.Core.Module.csproj", "{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadabout.Server.Core", "Gadabout.Server.Core\Gadabout.Server.Core.csproj", "{CB421FDB-51F6-4AA6-996C-685AD08A71C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,10 +42,6 @@ Global
 		{84B03E1B-35AD-4B36-AF2F-09BD13D3A601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84B03E1B-35AD-4B36-AF2F-09BD13D3A601}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84B03E1B-35AD-4B36-AF2F-09BD13D3A601}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461A8AB7-DBDA-455D-9B68-49EBE27CAD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,14 +50,6 @@ Global
 		{E741BDCA-1C56-4237-AA79-23AD911B8A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E741BDCA-1C56-4237-AA79-23AD911B8A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E741BDCA-1C56-4237-AA79-23AD911B8A9C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C4AEF27-41EB-4C45-BF31-83E16649C56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C4AEF27-41EB-4C45-BF31-83E16649C56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C4AEF27-41EB-4C45-BF31-83E16649C56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C4AEF27-41EB-4C45-BF31-83E16649C56F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5AB5F8D-6445-413B-B315-7946E751C461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5AB5F8D-6445-413B-B315-7946E751C461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5AB5F8D-6445-413B-B315-7946E751C461}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -72,6 +58,14 @@ Global
 		{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0590C4E8-0EBD-460E-B0D3-B42A410AFCFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50EF658E-B960-42E6-8EEB-6E2D5FF5975B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB421FDB-51F6-4AA6-996C-685AD08A71C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

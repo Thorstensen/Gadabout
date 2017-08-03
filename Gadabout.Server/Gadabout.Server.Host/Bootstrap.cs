@@ -28,7 +28,7 @@ namespace Gadabout.Server.Host
 
                 _modules.ForEach(module =>
                 {
-                    ConsoleLogger.Log($"Loading module {module.ModuleName}", System.Drawing.Color.Green);
+                    ConsoleLogger.Log($"Loading module {module.ModuleName}", LogLevel.Trace);
                     module.RegisterTypes(_containerBuilder);
                 });
             }

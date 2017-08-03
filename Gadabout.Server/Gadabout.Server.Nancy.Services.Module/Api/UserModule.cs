@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nancy.Extensions;
+using Nancy.Security;
 
 namespace Gadabout.Server.Nancy.Services.Module.Api
 {
@@ -25,7 +26,7 @@ namespace Gadabout.Server.Nancy.Services.Module.Api
 
             Post("/new", d =>
             {
-                if(!IsAuthenticated)
+                if (!IsAuthenticated)
                     return HttpStatusCode.Forbidden;
 
                 var user = this.Bind<User>();
