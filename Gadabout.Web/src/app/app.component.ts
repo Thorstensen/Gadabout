@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import {TripListComponent} from './trips/trip-list.component'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule }      from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template:`<h1><trip-list></trip-list></h1>`,
+  template:`<login-form></login-form>`,
   styleUrls: ['./app.component.css'],
 
 })
