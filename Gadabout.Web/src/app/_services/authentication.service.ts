@@ -7,14 +7,14 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class AuthenticationService {
 
-    //public token:string;
+    public token:string;
     private authenticationEndpoint:string = "http://localhost:8081/login";
     private grant_type:string = "password";
 
     constructor(private http: Http) {
      
         var currentUser = JSON.parse(localStorage.getItem('user'));
-        //this.token = currentUser.token;
+        this.token = currentUser.token;
     }
 
     login(userName: string, password:string) : Observable<boolean> {
@@ -25,16 +25,18 @@ export class AuthenticationService {
         let params: URLSearchParams = this.formatHttpParameters(userName, password);
         
         return this.http.post(this.authenticationEndpoint, params)
-            .map((response:Response) =>  {
+            .map((response) =>  {
                     let resp = response;
                     let token = response.json() && response.json().access_token;
                     if(token){
-                        //this.token = token;
+                        this.token = token;
                         localStorage.setItem('user', JSON.stringify({userName: userName, token:token}));
                         return true;
                     }
 
                     return false;
+                }).catch((err:Response, caught:Observable<boolean>) => {
+                    return  Observable.of(false);
                 });
     }
 

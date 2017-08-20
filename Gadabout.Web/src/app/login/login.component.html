@@ -16,6 +16,7 @@
                     </label>
                     <button class="btn btn-lg btn-success btn-block" type="submit"> Sign in</button>
                     <a href="#" class="text-center new-account">Create an account </a>
+                    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
                 </form>
             </div>
         </div>

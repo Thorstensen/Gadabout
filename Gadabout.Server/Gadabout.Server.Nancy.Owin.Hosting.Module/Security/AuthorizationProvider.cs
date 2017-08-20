@@ -36,7 +36,8 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module.Security
 
             if (!_authenticationService.AuthenticateUser(credentials.UserName, credentials.Password))
             {
-                context.SetError("invalid_grant", "Invalid credentials.");
+                context.Rejected();
+                //context.SetError("invalid_grant", "Invalid credentials.");
                 return;
             }
 

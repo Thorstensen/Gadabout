@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
                 .subscribe(result => {
 
                     if(result == true){
+                        this.error = '';
                         this.router.navigate(['/'])
                     }
                     else{
