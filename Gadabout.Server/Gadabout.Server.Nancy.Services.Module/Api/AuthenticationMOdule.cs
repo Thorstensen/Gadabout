@@ -24,8 +24,8 @@ namespace Gadabout.Server.Nancy.Services.Module.Api
             //Post("/login", d =>
             //{
             //    var body = Request.ReadHttpBody();
-            //    var userName = (string)body.UserName.Value;
-            //    var password = body.Password.Value;
+            //    var userName = (string)body.userName.Value;
+            //    var password = body.password.Value;
             //    var user = _userRepository.GetUser(userName);
 
             //    if (!passwordManager.VerifyPassword(password, user.HashedPassword))

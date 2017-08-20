@@ -59,22 +59,25 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module
 
         private void ConfigureOAuth(IAppBuilder app)
         {
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
-            {
-                Provider = new OAuthTokenProvider(
-                   req => req.Query.Get("bearer_token"),
-                   req => req.Query.Get("access_token"),
-                   req => req.Query.Get("token"),
-                   req => req.Headers.Get("X-Token"))
-            });
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            //app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
+            //{
+            //    Provider = new OAuthTokenProvider(
+            //       req => req.Query.Get("bearer_token"),
+            //       req => req.Query.Get("access_token"),
+            //       req => req.Query.Get("token"),
+            //       req => req.Headers.Get("X-Token"))
+            //});
 
             app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
             {
-                AllowInsecureHttp = true, // you should use this for debugging only
+                AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/login"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(8),
                 Provider = new AuthorizationProvider(Container.Resolve<IAuthenticationService>()),
             });
+
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
         }
     }
 }

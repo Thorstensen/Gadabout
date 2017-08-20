@@ -27,7 +27,7 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module.Security
             this.locations.Add(x => x.Headers.Get(AuthHeader));
         }
 
-        public override Task RequestToken(OAuthRequestTokenContext context)
+        public override async Task RequestToken(OAuthRequestTokenContext context)
         {
             var getter = locations.FirstOrDefault(x => !String.IsNullOrWhiteSpace(x(context.Request)));
             if (getter != null)
@@ -35,7 +35,6 @@ namespace Gadabout.Server.Nancy.Owin.Hosting.Module.Security
                 var tokenStr = getter(context.Request);
                 context.Token = bearerRegex.Replace(tokenStr, "").Trim();
             }
-            return Task.FromResult<object>(null);
         }
     }
 }

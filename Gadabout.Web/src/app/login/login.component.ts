@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from '../_services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'login-form',
@@ -6,6 +8,30 @@ import { Component } from '@angular/core';
     styleUrls: ['login.component.css'],
 })
 
-export class LoginComponent {
- 
+export class LoginComponent implements OnInit {
+    
+    model: any = {};
+    error: string;
+    
+    constructor(private authenticationService:AuthenticationService,
+                private router:Router) {
+
+    }
+
+    ngOnInit(): void {
+      
+    }
+
+    login(){
+        this.authenticationService.login(this.model.userName, this.model.password)
+                .subscribe(result => {
+
+                    if(result == true){
+                        this.router.navigate(['/'])
+                    }
+                    else{
+                        this.error = "Wrong Username or Password";
+                    }
+                });
+    }
 }
