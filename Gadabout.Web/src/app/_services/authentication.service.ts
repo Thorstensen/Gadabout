@@ -12,9 +12,8 @@ export class AuthenticationService {
     private grant_type:string = "password";
 
     constructor(private http: Http) {
-     
         var currentUser = JSON.parse(localStorage.getItem('user'));
-        this.token = currentUser.token;
+        this.token = currentUser && currentUser.token;
     }
 
     login(userName: string, password:string) : Observable<boolean> {
@@ -26,7 +25,6 @@ export class AuthenticationService {
         
         return this.http.post(this.authenticationEndpoint, params)
             .map((response) =>  {
-                    let resp = response;
                     let token = response.json() && response.json().access_token;
                     if(token){
                         this.token = token;
@@ -41,8 +39,8 @@ export class AuthenticationService {
     }
 
     logut() : void {
-        //this.token = null;
-        localStorage.removeItem('currentUser');
+        this.token = null;
+        localStorage.removeItem('user');
     }
 
     formatHttpParameters(userName:string, password:string): URLSearchParams {

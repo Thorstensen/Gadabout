@@ -4,7 +4,7 @@ import { NgModule }      from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template:`<login-form></login-form>`,
+  template:`<router-outlet></router-outlet>`,
   styleUrls: ['./app.component.css'],
 
 })

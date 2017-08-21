@@ -19,16 +19,15 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      
+      this.authenticationService.logut();
     }
 
     login(){
         this.authenticationService.login(this.model.userName, this.model.password)
                 .subscribe(result => {
-
                     if(result == true){
                         this.error = '';
-                        this.router.navigate(['/'])
+                        this.router.navigate(['/dashboard'])
                     }
                     else{
                         this.error = "Wrong Username or Password";
